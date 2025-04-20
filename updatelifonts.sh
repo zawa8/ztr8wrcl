@@ -1,12 +1,29 @@
 #!/bin/bash
 ############################
-gitmsz1="'zawa8.vercel.app mck82.vercel.app fb.com/ztrabc x.com/etphor'"
+gitmsz1="'ztr8.vercel.app mck82.vercel.app fb.com/ztrabc x.com/etphor'"
 ############################
-this_dir="/home/viml/mg/zw8/zawa8.github.io/"
-src_lifonts_dir="/home/viml/mg/zw8/zawa8.github.io/src/components/lifonts/"
-#wrcl_dir="/home/viml/mg/wrcl/"
-#weijunext_dir="/home/viml/mg/wrcl/weijunext/"
-#weijunext_componentspath="/home/viml/mg/wrcl/weijunext/components/"
+cwd=$(pwd)
+src_lifonts_dir="/home/viml/mg/zw8/ztr8wrcl/src/components/lifonts/"
+woff2_hscii_fonts_dir="/home/viml/mg/zw8/font/woff2/hscii"
+############################
+rm -r ${src_lifonts_dir}/fonts/hscii
+cp -r ${woff2_hscii_fonts_dir} ${src_lifonts_dir}/fonts/
+############################
+read -n1 -s -r -p $'Press d tu delete englo[dotw8/softw8] englosoftw8/englosoftw8[utf/mono] or Ctrl+C to exit...\n' key
+if [ "$key" = 'd' ]; then
+	printf "pressed d so deleting englo[dotw8/softw8] englosoftw8/englosoftw8[utf/mono] \n"
+	rm -r ${src_lifonts_dir}/fonts/hscii/onlyw8
+	rm -r ${src_lifonts_dir}/fonts/hscii/englodotw8
+	rm -r ${src_lifonts_dir}/fonts/hscii/englosoftw8/englosoftw8utf
+	rm -r ${src_lifonts_dir}/fonts/hscii/englosoftw8/englosoftw8mono
+else
+	read -n1 -s -r -p $'Press e tu exit the script. any other key to continue script\n' key
+	if [ "$key" = 'e' ]; then
+		printf "pressed e .  so exiting the script\n"
+		exit
+	fi
+fi
+############################
 declare -a wrcl_lifont_arr=(
 "/home/viml/mg/wrcl/weijunext/components/"
 "/home/viml/mg/wrcl/mck_/mck82/components/"
@@ -27,10 +44,10 @@ for i in "${wrcl_lifont_arr[@]}"
 do
 	rm -r ${i}/lifonts
 	cp -r ${src_lifonts_dir} ${i}/
-	#cp -r ${weijunext_componentspath}/lifonts ${i}/
 done
 ############################
 declare -a wrcl_git_arr=(
+"/home/viml/mg/zw8/ztr8wrcl/"
 "/home/viml/mg/wrcl/weijunext/"
 "/home/viml/mg/wrcl/mck_/mck82/"
 "/home/viml/mg/wrcl/mck_/mck81/"
@@ -56,11 +73,11 @@ if [ "$key" = 'g' ]; then
 		cd ${i}
 		printf "current directory is : $(pwd)\n"
 		printf "doiNg git add commit push ${i}\n"
-		git add . ; git commit -am 'zawa8.vercel.app mck82.vercel.app fb.com/ztrabc x.com/etphor' ; git push
+		git add . ; git commit -am 'ztr8.vercel.app mck82.vercel.app fb.com/ztrabc x.com/etphor' ; git push
 	done
 else
 	printf "pressed other key.  so no git-commit. please do git add-commit-push lateron \n"
 fi
 ############################
-cd ${this_dir}
+cd ${cwd}
 ############################
