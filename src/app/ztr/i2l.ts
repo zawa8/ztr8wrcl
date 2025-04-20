@@ -20,7 +20,13 @@ export function i2l(ioz: { i: string; o: string; z: string  }): void {
 		"ಕಖಜಝಟಠಡಢತಥದಧನಪಫಬಭಮಯರಲಶಸಹಅವ","കഖജഝടഠഡഢതഥദധനപഫബഭമയരലശസഹഅവ",
 		"කඛජඣටඨඩඪතථදධනපඵබභමයරලශසහඅව","கKஜZடTdDதJqQநபfbBமயரலஶஸஹஅவ",
 		"ㅋKㅈZㅌT다DjJqQㄴㅍf바Bㅁㅑ라lSㅅㅎㅏ봐",
-	];// "тдпБсйрлмɦфaԃт"
+		"කKzZtTдДtTдДнпфбБмйрлщшහඅව",
+	];
+	/* https://tandem.net/blog/russian-alphabet
+	 *  "කKzZtTдДtTдДнпфбБмйрлщшහඅව"
+	 * К б_b ,  д_d  , з_z , й_y , k_k     л_l  м_m   р_r   п_p   
+	 *   н_n в_w
+	 * */
 	const inputLength: number = ioz.i.length;
 	ioz.o = ''; 
 	const oarr: string[] = Array(11).fill("");
@@ -54,15 +60,16 @@ export function i2l(ioz: { i: string; o: string; z: string  }): void {
 		"modern_kannadα: " + oarr[6] + "\n\n" +
         "modern_malayαlam: " + oarr[7] + "\n\n" +
         "modern_odiα/oriyα: " + oarr[4] + "\n\n" +
+		"modern_russian: " + oarr[11] + "\n\n" +
         "modern_sinhalα: " + oarr[8] + "\n\n" +
         "modern_guzrαтi: " + oarr[3];
 	ioz.o = ioz.o.replace(
 		/([KZTDJQBS])/g, function(v) { return v.toLowerCase()+"h"; }
 		).replace(/j/g, 'т').replace(/q/g, 'ԃ');
-	ioz.o = ioz.o + "\n\nEng:52:a-z+A-Z ing4:a-z+4αԃɦт/ADHT.\n" +
+	ioz.o = ioz.o + "\n\ninglish4:4αԃɦт.\n" +
 		"ααm ααԃmi ki zrurт : bhαsα anek , likhαi anek , sbme 8aiueohcg ek.\n" +
 		"wn wowels(8αiueohcg) wn indiα wn bhαrT great indiα\n" +
-		"https://zawa8.vercel.app/ -> font\ning115b.ttf hindi115b.ttf android/chrome/firefox/windows/linux\n";
+		"https://ztr8.vercel.app/ -> font\n^*englosoftw8utf.ttf/woff2 *=tamil/hindi/korean/russian/sinhala/etc.../\nandroid/chrome/firefox/windows/linux\n";
 }
 
 /*

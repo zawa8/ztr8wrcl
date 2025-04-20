@@ -3,7 +3,7 @@ import "./globals.css";
 import { hindienglosoftw8asc } from "@/components/lifonts/localfonts";
 //import 
 export const metadata: Metadata = {
-  title: "zawa8",
+  title: "ztr8_zawa8",
   description: "transliterates phonetical languages",
 };
 

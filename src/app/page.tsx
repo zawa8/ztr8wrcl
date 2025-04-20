@@ -13,7 +13,7 @@ export default function Home() {
   const [iteksta, set_iteksta] = useState("");
   const sampletkst = `test: select language binary/inglish4/... n see changes vere(here).
   x.com=xmericα=Americα=Aks.com
-  zαwα8.vercel.App=zawa8.Vercel.app
+  zawa8.vercel.App is now muwed to ztr8.Vercel.app(new)
   whitehome=wvitevouse cαr=cAb=cxb
   ziro wn two three four fiwe siks sewen
   0123 4567 89LY VWPF . 4finger_mxths . 8+8=10=wnti=4*4
@@ -65,11 +65,11 @@ steps to use : 1. pls replace ԃis tekst to indiα/nepαl/sinhl/bαnglα.
           <FontPicker/>
           <a
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://github.com/zawa8s/font/tree/main/bigttf/115b"
+            href="https://github.com/zawa8s/font"
             target="_blank"
             rel="noopener noreferrer"
           >
-            try hscii fonts
+            free hscii fonts
           </a>
         </div>
         <div className="flex gap-4 items-center flex-col sm:flex-row">
