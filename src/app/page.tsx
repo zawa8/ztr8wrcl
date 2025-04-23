@@ -1,16 +1,16 @@
 'use client';
 import { SetStateAction, useState } from 'react';
-
 import Image from "next/image";
-// import { FormEvent } from "react";
-import { duztr } from "./ztr/duztr";
-// import { ue2il } from "./ztr/ue2il";
+//import { duztr } from "./ztr/duztr";
+import wzk from 'wzk'; 
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import FontPicker from '@/components/lifonts/lifp';
 
 export default function Home() {
+  // const wzktr= new wzk();
   const [iteksta, set_iteksta] = useState("");
+  //let iteksta: string = "";
   const sampletkst = `test: select language binary/inglish4/... n see changes vere(here).
   x.com=xmericα=Americα=Aks.com
   zawa8.vercel.App is now muwed to ztr8.Vercel.app(new)
@@ -26,33 +26,40 @@ steps to use : 1. pls replace ԃis tekst to indiα/nepαl/sinhl/bαnglα.
   const oplaceholer = `output:replace/paste some Eng52/ing4/unicode tekst(text) and press eu2i btn.
   output will get generAted in Asia lAnguAges.`;
   const btntkst = `ztr`
-  const [oteksta, set_oteksta] = useState('');
   const itekst: string = "";
-  const otekst: string = "";
-  const ztrdir: string = "";
-  // const [text, set_text] = useState(itekst);
+  // const otekst: string = "";
+  // const ztrdir: string = "";
 
-  const ioz: { i: string; o: string; z: string } = { i: itekst, o: otekst, z: ztrdir };
 
   const handle_ita_change = (event: { target: { value: SetStateAction<string>; }; }) => {
     set_iteksta(event.target.value);
   };
-  const handle_ota_change = (event: { target: { value: SetStateAction<string>; }; }) => {
-    set_oteksta(event.target.value);
-  };
-  //function itekst_on_input(): void { duztr(ioz); }
-  //function ztrdir_changed(): void { duztr(ioz); }
-  function on_eu2l() { 
-    ioz.i = iteksta ;
-    //ue2il(ioz); 
-    /////
-    ioz.z = "e2i"; duztr(ioz);
-    ioz.z = "u2i"; duztr(ioz);
-    ioz.i = ioz.o; // set_iteksta(ioz.i); //risky
-    ioz.z = "i2l"; duztr(ioz);
-    set_oteksta(ioz.o);
-  }
-
+  function on_eu2l(): void { 
+    const wzktr: wzk = new wzk();
+    let ioft: { i: string; f: string; t: string; o: { 
+      inglish: string; korean: string; russian: string; 
+      hindi: string; bangla: string; gurmukhi: string; guzrati: string; oriya: string;
+      tamil: string; kannada: string; telugu: string; malayalam: string; sinhala: string; 
+    }; } = {
+      i: iteksta,
+      o: { 
+        inglish: "", korean: "", russian: "", 
+        hindi: "", bangla: "", gurmukhi: "", guzrati: "", oriya: "",
+        tamil: "", kannada: "", telugu: "", malayalam:"", sinhala:"", 
+      },
+      f: "both",
+      t: "all"
+    };
+    wzktr.ioft_tr(ioft);
+    const all_langs : string[] = [
+      "inglish","korean","russian","hindi","bangla","gurmukhi","guzrati","oriya","tamil","kannada","telugu","malayalam","sinhala"
+    ];
+    let all_output : string = "";
+    all_langs.forEach((item:string) => {
+      all_output += ("modern_" + item + ": " + ioft.o[item as keyof typeof ioft.o] + "\n"); 
+    });
+    set_iteksta(all_output);
+}
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-8 gap-4 sm:p-20">
@@ -73,12 +80,9 @@ steps to use : 1. pls replace ԃis tekst to indiα/nepαl/sinhl/bαnglα.
           </a>
         </div>
         <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <Textarea id="ita" value={iteksta} cols={40} onChange={handle_ita_change} placeholder={iplaceholer}></Textarea>
+          <Textarea id="ita" value={iteksta} cols={60} rows={16} onChange={handle_ita_change} placeholder={iplaceholer}></Textarea>
           <Button onClick={on_eu2l}>{btntkst}</Button>
         </div>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <Textarea id="ota" value={oteksta} onChange={handle_ota_change} cols={60} rows={12} placeholder={oplaceholer}></Textarea>
-        </div>        
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
